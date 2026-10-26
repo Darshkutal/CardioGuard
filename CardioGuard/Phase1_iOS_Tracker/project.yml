@@ -1,0 +1,27 @@
+name: CardioGuard
+options:
+  bundleIdPrefix: com.yourname
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  CardioGuard:
+    type: application
+    platform: iOS
+    sources: [CardioGuard]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yourname.cardioguard
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_CFBundleDisplayName: CardioGuard
+  CardioGuardTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [CardioGuardTests]
+    dependencies:
+      - target: CardioGuard
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
